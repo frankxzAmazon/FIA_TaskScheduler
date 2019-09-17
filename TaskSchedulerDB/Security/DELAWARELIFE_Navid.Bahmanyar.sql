@@ -1,0 +1,6 @@
+﻿CREATE USER [DELAWARELIFE\Navid.Bahmanyar] FOR LOGIN [DELAWARELIFE\Navid.Bahmanyar];
+
+
+
+
+

@@ -1,0 +1,4 @@
+﻿/.vs
+*.cache
+**/OptionValuation.exe
+**/OptionValuation.pdb

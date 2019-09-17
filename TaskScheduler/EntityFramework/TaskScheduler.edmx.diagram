@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="062be04f94d342d2acc6e6d66261e4ca" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="TaskSchedulerModel.EmailTrigger" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TaskSchedulerModel.FileTask" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TaskSchedulerModel.FolderTrigger" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TaskSchedulerModel.Job" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TaskSchedulerModel.RunTask" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TaskSchedulerModel.SharepointTrigger" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TaskSchedulerModel.CurrentStatu" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="TaskSchedulerModel.SQLTrigger" Width="1.5" PointX="2.75" PointY="6.75" />
+        <EntityTypeShape EntityType="TaskSchedulerModel.Task" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="TaskSchedulerModel.TimeTrigger" Width="1.5" PointX="4.75" PointY="6.75" />
+        <AssociationConnector Association="TaskSchedulerModel.FK_Task_ToJob" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
