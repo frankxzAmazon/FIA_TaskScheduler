@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TaskSchedulerModelStoreContainer" CdmEntityContainer="TaskSchedulerEntities">
+    <EntitySetMapping Name="EmailTriggers">
+      <EntityTypeMapping TypeName="TaskSchedulerModel.EmailTrigger">
+        <MappingFragment StoreEntitySet="EmailTrigger">
+          <ScalarProperty Name="SenderIsExactMatch" ColumnName="SenderIsExactMatch" />
+          <ScalarProperty Name="SenderEmailAddress" ColumnName="SenderEmailAddress" />
+          <ScalarProperty Name="ToAddTimestamp" ColumnName="ToAddTimestamp" />
+          <ScalarProperty Name="ToDownload" ColumnName="ToDownload" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="MoveFolder" ColumnName="MoveFolder" />
+          <ScalarProperty Name="FileNameIsExactMatch" ColumnName="FileNameIsExactMatch" />
+          <ScalarProperty Name="FileExtension" ColumnName="FileExtension" />
+          <ScalarProperty Name="FileNameSubstring" ColumnName="FileNameSubstring" />
+          <ScalarProperty Name="SubjectIsExactMatch" ColumnName="SubjectIsExactMatch" />
+          <ScalarProperty Name="SubjectSubstring" ColumnName="SubjectSubstring" />
+          <ScalarProperty Name="MonitorFolder" ColumnName="MonitorFolder" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="TriggerID" ColumnName="TriggerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileTasks">
+      <EntityTypeMapping TypeName="TaskSchedulerModel.FileTask">
+        <MappingFragment StoreEntitySet="FileTask">
+          <ScalarProperty Name="ToDeleteOriginal" ColumnName="ToDeleteOriginal" />
+          <ScalarProperty Name="ToUnzip" ColumnName="ToUnzip" />
+          <ScalarProperty Name="DateFormat" ColumnName="DateFormat" />
+          <ScalarProperty Name="ToIncludeDate" ColumnName="ToIncludeDate" />
+          <ScalarProperty Name="DestinationFolder" ColumnName="DestinationFolder" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FolderTriggers">
+      <EntityTypeMapping TypeName="TaskSchedulerModel.FolderTrigger">
+        <MappingFragment StoreEntitySet="FolderTrigger">
+          <ScalarProperty Name="ToIncludeSubDirectories" ColumnName="ToIncludeSubDirectories" />
+          <ScalarProperty Name="FileExtension" ColumnName="FileExtension" />
+          <ScalarProperty Name="FileNameIsExactMatch" ColumnName="FileNameIsExactMatch" />
+          <ScalarProperty Name="FileNameSubstring" ColumnName="FileNameSubstring" />
+          <ScalarProperty Name="FolderToMonitor" ColumnName="FolderToMonitor" />
+          <ScalarProperty Name="TriggerID" ColumnName="TriggerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jobs">
+      <EntityTypeMapping TypeName="TaskSchedulerModel.Job">
+        <MappingFragment StoreEntitySet="Job">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ToRunOnReset" ColumnName="ToRunOnReset" />
+          <ScalarProperty Name="ToRunOnStart" ColumnName="ToRunOnStart" />
+          <ScalarProperty Name="TriggerId" ColumnName="TriggerId" />
+          <ScalarProperty Name="JobName" ColumnName="JobName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunTasks">
+      <EntityTypeMapping TypeName="TaskSchedulerModel.RunTask">
+        <MappingFragment StoreEntitySet="RunTask">
+          <ScalarProperty Name="ProgramCommaDelimParams" ColumnName="ProgramCommaDelimParams" />
+          <ScalarProperty Name="ProgramName" ColumnName="ProgramName" />
+          <ScalarProperty Name="ProgramLocation" ColumnName="ProgramLocation" />
+          <ScalarProperty Name="ProgramRunType" ColumnName="ProgramRunType" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SharepointTriggers">
+      <EntityTypeMapping TypeName="TaskSchedulerModel.SharepointTrigger">
+        <MappingFragment StoreEntitySet="SharepointTrigger">
+          <ScalarProperty Name="FileExtension" ColumnName="FileExtension" />
+          <ScalarProperty Name="FileNameIsExactMatch" ColumnName="FileNameIsExactMatch" />
+          <ScalarProperty Name="FileNameSubstring" ColumnName="FileNameSubstring" />
+          <ScalarProperty Name="SharepointFolder" ColumnName="SharepointFolder" />
+          <ScalarProperty Name="SharepointSite" ColumnName="SharepointSite" />
+          <ScalarProperty Name="TriggerID" ColumnName="TriggerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CurrentStatus">
+      <EntityTypeMapping TypeName="TaskSchedulerModel.CurrentStatu">
+        <MappingFragment StoreEntitySet="CurrentStatus">
+          <ScalarProperty Name="LastRun" ColumnName="LastRun" />
+          <ScalarProperty Name="CurrentStatus" ColumnName="CurrentStatus" />
+          <ScalarProperty Name="JobName" ColumnName="JobName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SQLTriggers">
+      <EntityTypeMapping TypeName="TaskSchedulerModel.SQLTrigger">
+        <MappingFragment StoreEntitySet="SQLTrigger">
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+          <ScalarProperty Name="SQLCode" ColumnName="SQLCode" />
+          <ScalarProperty Name="DBName" ColumnName="DBName" />
+          <ScalarProperty Name="InstanceName" ColumnName="InstanceName" />
+          <ScalarProperty Name="TriggerID" ColumnName="TriggerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tasks">
+      <EntityTypeMapping TypeName="TaskSchedulerModel.Task">
+        <MappingFragment StoreEntitySet="Task">
+          <ScalarProperty Name="ToWaitForFinish" ColumnName="ToWaitForFinish" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="JobName" ColumnName="JobName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TimeTriggers">
+      <EntityTypeMapping TypeName="TaskSchedulerModel.TimeTrigger">
+        <MappingFragment StoreEntitySet="TimeTrigger">
+          <ScalarProperty Name="ExecutionFrequencyUnits" ColumnName="ExecutionFrequencyUnits" />
+          <ScalarProperty Name="ExecutionFrequency" ColumnName="ExecutionFrequency" />
+          <ScalarProperty Name="FirstExecutionTime_EST_" ColumnName="FirstExecutionTime(EST)" />
+          <ScalarProperty Name="TriggerID" ColumnName="TriggerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

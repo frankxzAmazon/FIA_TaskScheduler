@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0">
+  <Operation Name="Rename Refactor" Key="700f2c61-c104-4751-a867-cc6de5c36d0c" ChangeDateTime="03/12/2018 18:42:14" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[DownloadFileEvent].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DownloadFileEvent]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TaskId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="0c0438b5-8f52-461d-8032-771cc2930ac9" ChangeDateTime="03/13/2018 10:33:07" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[CurrentStatus].[JobID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CurrentStatus]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="JobName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d7aff0b0-d6d3-4de1-b569-cf8313ee3252" ChangeDateTime="03/13/2018 10:33:24" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Job].[JobId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Job]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="JobName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="706e5804-e130-417e-8812-1dd612d8cd7d" ChangeDateTime="03/13/2018 10:33:41" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Task].[JobId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Task]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="JobName" />
+  </Operation>
+</Operations>

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TaskSchedulerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TaskSchedulerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EmailTriggers" EntityType="TaskSchedulerModel.EmailTrigger" />
+    <EntitySet Name="FileTasks" EntityType="TaskSchedulerModel.FileTask" />
+    <EntitySet Name="FolderTriggers" EntityType="TaskSchedulerModel.FolderTrigger" />
+    <EntitySet Name="Jobs" EntityType="TaskSchedulerModel.Job" />
+    <EntitySet Name="RunTasks" EntityType="TaskSchedulerModel.RunTask" />
+    <EntitySet Name="SharepointTriggers" EntityType="TaskSchedulerModel.SharepointTrigger" />
+    <EntitySet Name="CurrentStatus" EntityType="TaskSchedulerModel.CurrentStatu" />
+    <EntitySet Name="SQLTriggers" EntityType="TaskSchedulerModel.SQLTrigger" />
+    <EntitySet Name="Tasks" EntityType="TaskSchedulerModel.Task" />
+    <EntitySet Name="TimeTriggers" EntityType="TaskSchedulerModel.TimeTrigger" />
+    <AssociationSet Name="FK_Task_ToJob" Association="TaskSchedulerModel.FK_Task_ToJob">
+      <End Role="Job" EntitySet="Jobs" />
+      <End Role="Task" EntitySet="Tasks" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="EmailTrigger">
+    <Key>
+      <PropertyRef Name="TriggerID" />
+    </Key>
+    <Property Name="TriggerID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MonitorFolder" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SubjectSubstring" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SubjectIsExactMatch" Type="Boolean" Nullable="false" />
+    <Property Name="FileNameSubstring" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FileExtension" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FileNameIsExactMatch" Type="Boolean" Nullable="false" />
+    <Property Name="MoveFolder" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Priority" Type="Int16" Nullable="false" />
+    <Property Name="ToDownload" Type="Boolean" Nullable="false" />
+    <Property Name="ToAddTimestamp" Type="Boolean" Nullable="false" />
+    <Property Name="SenderEmailAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SenderIsExactMatch" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FileTask">
+    <Key>
+      <PropertyRef Name="TaskId" />
+    </Key>
+    <Property Name="TaskId" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DestinationFolder" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ToIncludeDate" Type="Boolean" Nullable="false" />
+    <Property Name="DateFormat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ToUnzip" Type="Boolean" Nullable="false" />
+    <Property Name="ToDeleteOriginal" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FolderTrigger">
+    <Key>
+      <PropertyRef Name="TriggerID" />
+    </Key>
+    <Property Name="TriggerID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FolderToMonitor" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="FileNameSubstring" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FileNameIsExactMatch" Type="Boolean" />
+    <Property Name="FileExtension" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ToIncludeSubDirectories" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Job">
+    <Key>
+      <PropertyRef Name="JobName" />
+    </Key>
+    <Property Name="JobName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TriggerId" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ToRunOnStart" Type="Boolean" Nullable="false" />
+    <Property Name="ToRunOnReset" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Tasks" Relationship="TaskSchedulerModel.FK_Task_ToJob" FromRole="Job" ToRole="Task" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RunTask">
+    <Key>
+      <PropertyRef Name="TaskId" />
+    </Key>
+    <Property Name="TaskId" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ProgramRunType" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ProgramLocation" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ProgramName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ProgramCommaDelimParams" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SharepointTrigger">
+    <Key>
+      <PropertyRef Name="TriggerID" />
+    </Key>
+    <Property Name="TriggerID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SharepointSite" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="SharepointFolder" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="FileNameSubstring" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FileNameIsExactMatch" Type="Boolean" Nullable="false" />
+    <Property Name="FileExtension" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CurrentStatu">
+    <Key>
+      <PropertyRef Name="JobName" />
+    </Key>
+    <Property Name="JobName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentStatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastRun" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="SQLTrigger">
+    <Key>
+      <PropertyRef Name="TriggerID" />
+    </Key>
+    <Property Name="TriggerID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="InstanceName" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="DBName" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Name="SQLCode" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EventType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="JobName" />
+      <PropertyRef Name="Priority" />
+    </Key>
+    <Property Name="JobName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TaskId" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Priority" Type="Byte" Nullable="false" />
+    <Property Name="ToWaitForFinish" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Job" Relationship="TaskSchedulerModel.FK_Task_ToJob" FromRole="Task" ToRole="Job" />
+  </EntityType>
+  <EntityType Name="TimeTrigger">
+    <Key>
+      <PropertyRef Name="TriggerID" />
+    </Key>
+    <Property Name="TriggerID" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FirstExecutionTime_EST_" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ExecutionFrequency" Type="Int16" Nullable="false" />
+    <Property Name="ExecutionFrequencyUnits" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Task_ToJob">
+    <End Type="TaskSchedulerModel.Job" Role="Job" Multiplicity="1" />
+    <End Type="TaskSchedulerModel.Task" Role="Task" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job">
+        <PropertyRef Name="JobName" />
+      </Principal>
+      <Dependent Role="Task">
+        <PropertyRef Name="JobName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

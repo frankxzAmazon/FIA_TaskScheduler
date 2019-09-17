@@ -176,6 +176,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>"C:\Program Files\TortoiseSVN\bin\subwcrev" "$(ProjectDir).\.." "$(ProjectDir)\Properties\AssemblyInfo.cs.tmpl" "$(ProjectDir)\Properties\AssemblyInfo.cs"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>

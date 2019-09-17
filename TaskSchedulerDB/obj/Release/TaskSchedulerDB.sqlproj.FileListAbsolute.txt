@@ -1,0 +1,9 @@
+C:\Users\DE149\source\repos\task-scheduler\TaskSchedulerDB\bin\Release\TaskSchedulerDB.dacpac
+C:\Users\DE149\source\repos\task-scheduler\TaskSchedulerDB\bin\Release\TaskSchedulerDB.dll
+C:\Users\DE149\source\repos\task-scheduler\TaskSchedulerDB\bin\Release\TaskSchedulerDB.pdb
+C:\Users\DE149\source\repos\task-scheduler\TaskSchedulerDB\obj\Release\TaskSchedulerDB.dll
+C:\Users\DE149\source\repos\task-scheduler\TaskSchedulerDB\obj\Release\TaskSchedulerDB.pdb
+C:\Users\DE149\source\repos\task-scheduler\TaskSchedulerDB\obj\Release\Model.xml
+C:\Users\DE149\source\repos\task-scheduler\TaskSchedulerDB\obj\Release\refactor.xml
+C:\Users\DE149\source\repos\task-scheduler\TaskSchedulerDB\obj\Release\postdeploy.sql
+C:\Users\DE149\source\repos\task-scheduler\TaskSchedulerDB\obj\Release\predeploy.sql
