@@ -30,7 +30,8 @@ namespace TaskScheduler.Monitors
         public string AttachmentSubstring { get; set; }
         public bool AttachmentIsExactMatch { get; set; }
         public string AttachmentFileExtension { get; set; }
-        public string DownloadFolder => Directory.GetCurrentDirectory() +"\\" + MonitorName;
+        public string DownloadFolder => "F:\\actuary\\DACT\\ALM\\FIAHedging\\DBUpload\\" + MonitorName;
+        //public string DownloadFolder => "\\sv351018\\NAS6\\actuary\\DACT\\ALM\\FIAHeding\\DBUpload\\" + MonitorName;
         public void SetMonitorFolder(string folderName = null, string mailbox = null)
         {
             monitorFolderName = (string.IsNullOrWhiteSpace(mailbox) ? "" : mailbox + " ") + folderName ?? "Inbox";
@@ -140,6 +141,7 @@ namespace TaskScheduler.Monitors
                 (SenderIsExactMatch && item.Sender.Address.Equals(SenderEmailAddress, StringComparison.InvariantCultureIgnoreCase))
                 || (!SenderIsExactMatch && item.Sender.Address.CaseInsensitiveContains(SenderEmailAddress))
                 || string.IsNullOrWhiteSpace(SenderEmailAddress)
+                || SenderEmailAddress.ToLower()=="null"
 
             );
         }
