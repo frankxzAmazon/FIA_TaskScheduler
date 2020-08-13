@@ -30,7 +30,7 @@ namespace TaskScheduler.Monitors
         public string AttachmentSubstring { get; set; }
         public bool AttachmentIsExactMatch { get; set; }
         public string AttachmentFileExtension { get; set; }
-        public string DownloadFolder => "F:\\actuary\\DACT\\ALM\\FIAHedging\\DBUpload\\" + MonitorName;
+        public string DownloadFolder => "W:\\DACT\\ALM\\FIAHedging\\DBUpload\\" + MonitorName;
         //public string DownloadFolder => "\\sv351018\\NAS6\\actuary\\DACT\\ALM\\FIAHeding\\DBUpload\\" + MonitorName;
         public void SetMonitorFolder(string folderName = null, string mailbox = null)
         {
